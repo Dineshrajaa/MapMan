@@ -3,7 +3,7 @@ var mapMan = {
 
     initializeMap: function() {
         var mapDiv = $("#mapHolder");
-        var userLocation = new plugin.google.maps.LatLng(11.0512626, 76.9461716);
+        var userLocation = new plugin.google.maps.LatLng(20.5936840, 78.9628800);
         var mapOptions = {
             'backgroundColor': 'white',
             'mapType': plugin.google.maps.MapTypeId.HYBRID,
@@ -28,7 +28,7 @@ var mapMan = {
         };
         map = plugin.google.maps.Map.getMap(mapDiv, mapOptions); // Initialize map with options
         map.addEventListener(plugin.google.maps.event.MAP_READY, function() {
-            map.showDialog();
+            
             // Add Marker
             map.addMarker({
                 'position': userLocation,
@@ -38,6 +38,7 @@ var mapMan = {
                 marker.showInfoWindow();
 
             });
+            map.showDialog();
         });
 
 
